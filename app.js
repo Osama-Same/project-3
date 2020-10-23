@@ -1,7 +1,10 @@
 const express = require('express');
-const router = require('./Routes');
+const router = require('./Routes/Rout_Admin');
+
 
 require('dotenv').config();
+console.log("env",process.env.SALT);
+
 
 const app = express();
 
