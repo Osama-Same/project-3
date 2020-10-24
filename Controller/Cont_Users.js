@@ -17,7 +17,9 @@ const GetAllUser =(req,res)=>{
 
     let Users1 =new users({    
         email:req.body.email,
-        password:req.body.password
+        name: req.body.name,
+       password:req.body.password ,
+       phoneNumber:req.body.phoneNumber
     })
     Users1.save()
     .then((result)=>{
@@ -27,7 +29,22 @@ const GetAllUser =(req,res)=>{
         res.json("an Error")
     })
  };
-
+ const UserUpdate =(req,res)=>{
+     UsersID =req.body.UsersID
+     let UpdateDate={
+        email:req.body.email,
+        name: req.body.name,
+       password:req.body.password ,
+       phoneNumber:req.body.phoneNumber
+     }
+     users.findByIdAndUpdate(UsersID,{$set:UpdateDate})
+     .then(()=>{
+         res.json("Update in DataBase")
+         .catch((err)=>{
+             res.json(err);
+         })
+     })
+};
 const UserDelete=(req,res)=>{
     let UserId =req.body.AdminId
     users.findByIdAndRemove(UserId)
@@ -39,22 +56,7 @@ const UserDelete=(req,res)=>{
     })
 };
 
-const UserUpdate =()=>{
 
-    let User_ID=req.body.User_ID 
-
-    let updateDate ={
-        email:req.body.email,
-        password:req.body.password
-};   
-  users.findByIdAndUpdate(User_ID,{$set:updateDate})
-        .then(() =>{
-            res.json( "Update Users");
-        })
-        .catch((err) =>{
-            res.json({message:'an error'})
-        })
-};
 module.exports={
     GetAllUser,
     UsersCreate,

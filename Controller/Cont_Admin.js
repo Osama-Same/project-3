@@ -27,7 +27,22 @@ const GetAllAdmin =(req,res)=>{
         res.json("an Error")
     })
  };
+ const AdminUpdate =(req,res)=>{
 
+    let Admin_ID=req.body.Admin_ID 
+
+    let updateDate ={
+        email:req.body.email,
+        password:req.body.password
+};   
+  admin.findByIdAndUpdate(Admin_ID,{$set:updateDate})
+        .then(() =>{
+            res.json( "Update Admin in Data");
+        })
+        .catch((err) =>{
+            res.json({message:'an error'})
+        })
+};
 const AdminDelete=(req,res)=>{
     let AdminId =req.body.AdminId
     admin.findByIdAndRemove(AdminId)
@@ -39,22 +54,7 @@ const AdminDelete=(req,res)=>{
     })
 };
 
-const AdminUpdate =()=>{
 
-    let User_ID=req.body.User_ID 
-
-    let updateDate ={
-        email:req.body.email,
-        password:req.body.password
-};   
-  users.findByIdAndUpdate(User_ID,{$set:updateDate})
-        .then(() =>{
-            res.json( "Update Users");
-        })
-        .catch((err) =>{
-            res.json({message:'an error'})
-        })
-};
 module.exports={
     GetAllAdmin,
     AdminCreate,
