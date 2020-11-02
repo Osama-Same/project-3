@@ -6,19 +6,12 @@ import Users from './Component/Users';
 import Data from './Component/DataBase';
 import './App.css';
 
-export default class App extends Component {
- constructor(props){
-   super(props);
-   this.state={
-     tasks:[],
-     data:"",
-     isLoggedIn: false
-   }
- }
+
+ 
 
 
-
-  render() {
+const App =()=>{
+  
    
     return (
       
@@ -40,6 +33,6 @@ export default class App extends Component {
        </Router>
     
     )
-  }
-}
+    }
+    export default App;
 

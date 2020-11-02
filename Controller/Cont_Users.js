@@ -13,24 +13,27 @@ const GetAllUser =(req,res)=>{
 
     })
 };
+
   const UsersCreate =(req,res)=>{
 
-    let Users1 =new users({    
-        email:req.body.email,
-        name: req.body.name,
-       password:req.body.password ,
-       phoneNumber:req.body.phoneNumber
-    })
-    Users1.save()
-    .then((result)=>{
-        res.json(result);
-    })
-    .catch((err)=>{
-        res.json("an Error")
-    })
+    console.log('addNewTask');
+    console.log('REQ.BODY: ', req.body);
+    const newusers = new users(req.body);
+    newusers
+      .save()
+      .then((result) => {
+        // console.log('RESULT: ',result)
+        // setTimeout(() => {
+          res.json(result);
+        // }, 2000);
+      })
+      .catch((err) => {
+        console.log('ERR: ', err);
+        res.json(err);
+      });
  };
  const UserUpdate =(req,res)=>{
-     UsersID =req.body.UsersID
+     UsersID =req.params.UsersID
      let UpdateDate={
         email:req.body.email,
         name: req.body.name,
@@ -46,7 +49,7 @@ const GetAllUser =(req,res)=>{
      })
 };
 const UserDelete=(req,res)=>{
-    let UserId =req.body.AdminId
+    let UserId =req.params.UserId
     users.findByIdAndRemove(UserId)
     .then(()=>{
       res.json("Remove And DataBase")
