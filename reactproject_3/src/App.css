@@ -1,5 +1,5 @@
 
-.main{
+.main1{
     text-align: left;
     background-color: black;
     width: 101%;
@@ -8,6 +8,25 @@
     font-size: revert;
     font-style: italic;
     
+}
+.main2{
+  text-align: right;
+  background-color: black;
+  width: 101%;
+  padding: 6px 11px 5px 8px;
+  margin: -30px;;
+  font-size: revert;
+  font-style: italic;
+  
+}
+.Home{
+  padding: 20px;
+}
+.About{
+  padding: 20px;
+}
+.Contact{
+  padding: 20px;
 }
 a:link {
         
@@ -24,7 +43,7 @@ a:link {
 
 .Users{
     width: 100%;
-    margin: 20px 200px;
+    margin: 30px 200px;
 }
 
 input[type=text] {
@@ -59,5 +78,37 @@ input[type=Email] {
     border: none;
     border-bottom: 2px solid red;
   } 
-
+  .Login1{
+    display: flex;
+    width: 100%;
+    padding: 70px 70px;
+  }
+  .login{
+    padding: 2px 50px;
+  }
+  .ButtonLogin{
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 5px 100px 2px 109px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    margin: 2px 2px;
+    cursor: pointer;
+  }
+  .ButtonCreate{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 3px 33px 2px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 10px;
+    cursor: pointer;
+    
+  }
 

@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
 
-export default class Home extends Component {
-    render() {
+const Home =(props)=>{   
+     
         return (
-            <div>
-                
+            <div className="Home">
+                 <p>welcome to Home</p>
+                   
             </div>
         )
-    }
+    
 }
+export default Home;

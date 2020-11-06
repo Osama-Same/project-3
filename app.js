@@ -1,19 +1,22 @@
 const express = require('express');
 const routerAdmin = require('./Routes/Rout_Admin');
 const routerUsers = require('./Routes/Rout_Users');
-const routerProdect=require('./Routes/Rout_Prodect')
+const routerProdect=require('./Routes/Rout_Prodect');
+const routerLogin=require('./Routes/Rout_Login');
 //const routerNews   =require('./Routes/Rout_News');
 //const routerMassage=require('./Routes/Rout_Meassage');
+const cors =require("cors")
 
 require('dotenv').config();
-
+const mysql = require('./MySql');
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use(routerAdmin);
 app.use(routerUsers);
 app.use(routerProdect);
+app.use(routerLogin);
 //app.use(routerNews);
 //app.use(routerMassage);
 
